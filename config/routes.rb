@@ -20,4 +20,15 @@ Rails.application.routes.draw do
   delete "/movies/:id" => "movies#destroy"
 
   #------------------------------
+
+  # Routes for the Director resource:
+
+  # root "directors#index" <--- this isn't needed because there is only one index page: movies#index. For symmetry, could have a directors#index as well that simply redirects to movies#index
+  resources :directors
+
+
+
+
+
+
 end

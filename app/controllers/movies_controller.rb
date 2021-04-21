@@ -15,6 +15,18 @@ class MoviesController < ApplicationController
 
       format.html
     end
+
+    matching_directors = Director.all
+
+    @directors = Director.order(created_at: :desc)
+
+    respond_to do |format|
+      format.json do
+        render json: @directors
+      end
+
+      format.html
+    end
   end
 
   def show
